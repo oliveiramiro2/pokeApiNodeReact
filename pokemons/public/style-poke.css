@@ -1,0 +1,43 @@
+.grid {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-areas: 
+        "header-poke header-poke"
+        "cards-poke cards-poke"
+    ;
+}
+
+.header-poke {
+    grid-area: header-poke;
+}
+
+.cards-poke {
+    grid-area: cards-poke;
+    display: inline;
+}
+
+
+
+.row .col.m6 {
+    display: grid;
+    grid-template-columns: 47% 47% 47% 47%;
+    margin-left: 3%;
+}
+
+.horizontal {
+    margin: 10px;
+    background-color: rgba(29, 202, 202, 0.158);
+}
+
+.card-image{
+    margin-left: 10px;
+    padding-top: 10%;
+}
+
+.card .card-content {
+    padding-left: 5%;
+}
+
+.card .card-action {
+    padding: 0;
+}
