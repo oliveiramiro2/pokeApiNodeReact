@@ -1,3 +1,9 @@
+body {
+    background-image: url(poke_background.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 50% auto;
@@ -26,7 +32,17 @@
 
 .horizontal {
     margin: 10px;
-    background-color: rgba(29, 202, 202, 0.158);
+    background-color: rgba(223, 235, 233, 0.445);
+   
+}
+
+.horizontal:hover {
+    transition: ease-in-out 0.5s;
+    background-color: rgba(29, 29, 177, 0.726);
+    box-shadow: #03040586 10px 15px 2px;
+    transform: translateY(-8px);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff;
 }
 
 .card-image{
@@ -35,9 +51,31 @@
 }
 
 .card .card-content {
-    padding-left: 5%;
+    padding: 25%;
+    padding-left: 10%;
+    font-size: 30px;
 }
 
 .card .card-action {
     padding: 0;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #000;
+}
+
+ul:not(.browser-default){
+    padding: 0 40%;
+    margin: 50px auto;
+}
+
+.pagination li a {
+    color: #fff;
+    font-size: 20px;
+}
+
+.pagination li a:hover {
+    transition: ease-in-out;
+    color: rgb(255, 8, 8);
+    font-size: 25px;
 }

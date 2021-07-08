@@ -10,23 +10,30 @@ class App extends Component {
     super(props)
 
     this.state = {
-      pokemons : []
+      pokemons : [],
+      proximaPag : [],
+      anteriorPag : []
     }
 
     
   } 
+  
   componentDidMount() {
       this.loadpokemon()
-
     }
   
-  apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon'
+  //apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon'
+  apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=1118'
   loadpokemon = async (url = this.apiLinkTodos) => {
     
     const response = await axios.get(url)
     const pokemons = response.data.results
+    const proximaPag = response.data.next
+    const anteriorPag = response.data.previous
     this.setState({ 
-      pokemons
+      pokemons,
+      proximaPag,
+      anteriorPag,
       })
   }
     
@@ -34,7 +41,11 @@ class App extends Component {
     return (
       <div className='Grid'>
         <HeaderPoke />
-        <CardsPoke pokemons={this.state.pokemons}/>
+        <CardsPoke 
+          pokemons={this.state.pokemons} 
+          next={this.state.proximaPag} 
+          provious={this.state.anteriorPag}
+        />
       </div>
     )
   }
