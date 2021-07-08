@@ -1,27 +1,38 @@
-import React, {  useEffect } from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import axios from '../../../blogNodeReact/client/node_modules/axios';
 
 import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
 
-function App() {
+class App extends Component {
+  constructor(props){
+    super(props)
 
-    useEffect(  () => {
-      fetch('https://pokeapi.co/api/v2/pokemon')
-        .then(r => r.json() )
-        .then(json => {
-          //console.log(`result = ${r}`)
-          console.log(`json = ${json.results.values}`)
+    this.state = {
+      resultado : []
+    }
+
+    axios
+      .get('/pokemons')
+      .then(resultado => {
+        console.log(resultado)
+        this.setState({
+          resultado : resultado.data
         })
-    }, [])
+      })
+  }  
     
-
-  return (
-    <div className='Grid'>
-      <HeaderPoke />
-      <CardsPoke />
-    </div>
-  );
+  render(){
+    {console.log(this.state.resultado)}
+    return (
+      <div className='Grid'>
+        <HeaderPoke />
+        <CardsPoke pokemons={this.state.resultado}/>
+      </div>
+    )
+  }
+  
 }
 
 export default App;
