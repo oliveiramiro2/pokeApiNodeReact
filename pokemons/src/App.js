@@ -1,34 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from '../../../blogNodeReact/client/node_modules/axios';
 
 import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
+import axios from 'axios';
 
 class App extends Component {
   constructor(props){
     super(props)
 
     this.state = {
-      resultado : []
+      pokemons : []
     }
 
-    axios
-      .get('/pokemons')
-      .then(resultado => {
-        console.log(resultado)
-        this.setState({
-          resultado : resultado.data
-        })
+    
+  } 
+  componentDidMount() {
+      this.loadpokemon()
+
+    }
+  
+  apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon'
+  loadpokemon = async (url = this.apiLinkTodos) => {
+    
+    const response = await axios.get(url)
+    const pokemons = response.data.results
+    this.setState({ 
+      pokemons
       })
-  }  
+  }
     
   render(){
-    {console.log(this.state.resultado)}
     return (
       <div className='Grid'>
         <HeaderPoke />
-        <CardsPoke pokemons={this.state.resultado}/>
+        <CardsPoke pokemons={this.state.pokemons}/>
       </div>
     )
   }

@@ -2,7 +2,6 @@ import React from 'react'
 import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
 
 const CardsPoke = (props) => {
-    console.log(`test ${props.pokemons}`)
     return(
         <div className='cards-poke'>
             <Row>
@@ -11,33 +10,20 @@ const CardsPoke = (props) => {
                     s={12}
                 >
                     {props.pokemons.map(
-                        (poke, id) => 
-                            
+                        (poke, id) =>                            
                            <Card
-                                key="1"
+                                key={id}
                                 actions={[
                                     <a key="1" href="">a</a>
                                 ]}
                                 closeIcon={<Icon>close</Icon>}
-                                header={<CardTitle image="https://materializecss.com/images/sample-1.jpg" />}
+                                header={<CardTitle image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id+1}.png`} />}
                                 horizontal
                                 revealIcon={<Icon>more_vert</Icon>}
                                 >
-                                Here is the standard card with a horizontal image.
+                                {poke.name}
                             </Card> 
-                    )}
-                    <Card
-                                key="1"
-                                actions={[
-                                    <a key="1" href="">a</a>
-                                ]}
-                                closeIcon={<Icon>close</Icon>}
-                                header={<CardTitle image="https://materializecss.com/images/sample-1.jpg" />}
-                                horizontal
-                                revealIcon={<Icon>more_vert</Icon>}
-                                >
-                                Here is the standard card with a horizontal image.
-                            </Card>     
+                    )} 
                 </Col>
             </Row>
         </div>

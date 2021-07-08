@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 const routes = require('./routes')
 app.use('/api', routes)
 
-app.use(express.static(__dirname + '/pokemons'))
+app.use(express.static(__dirname + '/'))
 
 /* #### rodando servidor #### */
 const port = 3001
