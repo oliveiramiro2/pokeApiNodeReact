@@ -1,51 +1,90 @@
 import React, { Component } from 'react';
+import { Icon } from 'react-materialize';
 import './App.css';
 
 import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
 import axios from 'axios';
 
+/* global vai controlar a ordem das fotos modificando o link apenas por um numero */
+global.atual = null
+
 class App extends Component {
-  constructor(props){
-    super(props)
 
-    this.state = {
-      pokemons : [],
-      proximaPag : [],
-      anteriorPag : []
-    }
-
-    
+  state = {
+    pokemons : [],
+    proximaPag : {},
+    anteriorPag : {},
   } 
-  
+
   componentDidMount() {
       this.loadpokemon()
     }
   
-  //apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon'
-  apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=1118'
-  loadpokemon = async (url = this.apiLinkTodos) => {
-    
-    const response = await axios.get(url)
-    const pokemons = response.data.results
-    const proximaPag = response.data.next
-    const anteriorPag = response.data.previous
-    this.setState({ 
-      pokemons,
-      proximaPag,
-      anteriorPag,
+  apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon'
+  loadpokemon = async (url = null) => {
+    try{
+      const response = await axios.get(url)
+      const pokemons = response.data.results
+      const proximaPag = {
+        proximaPag: response.data.next,
+      }
+      const anteriorPag = {
+        anteriorPag: response.data.previous
+      }
+      console.log(`try prox ${proximaPag.proximaPag} retorno ${response.data.next} ant ${anteriorPag.anteriorPag}`)
+      this.setState({ 
+        pokemons,
+        proximaPag,
+        anteriorPag,
       })
+    }catch{
+      const response = await axios.get(this.apiLinkTodos)
+      const pokemons = response.data.results
+      const proximaPag = {
+        proximaPag: response.data.next,
+      }
+      const anteriorPag = {
+        anteriorPag: response.data.previous
+      }
+      console.log(`try prox ${proximaPag.next} retorno ${response.data.next} ant ${anteriorPag.anteriorPag}`)
+      this.setState({ 
+        pokemons,
+        proximaPag,
+        anteriorPag,
+      })
+      console.log(`try prox ${this.state.proximaPag.proximaPag}`)
+    }   
   }
-    
+
+  nextPag = () => {
+    const { proximaPag } = this.state
+    if(proximaPag.next === null) return
+    const nextPag = proximaPag.proximaPag
+    global.atual = global.atual+20
+    this.loadpokemon(nextPag)
+  }
+
+  prevPag = () => {
+    const { anteriorPag } = this.state
+    if(anteriorPag.previous === null) return
+    const prevPag = anteriorPag.anteriorPag
+    global.atual = global.atual-20
+    this.loadpokemon(prevPag)
+  }
+  
   render(){
     return (
       <div className='Grid'>
         <HeaderPoke />
         <CardsPoke 
           pokemons={this.state.pokemons} 
-          next={this.state.proximaPag} 
-          provious={this.state.anteriorPag}
+          pag={global.atual}
         />
+         <div className='paginator'>
+          <button className='pag-anterior' onClick={this.prevPag}> <Icon>chevron_left</Icon> </button>
+          <button className='pag-proxima' onClick={this.nextPag}> <Icon>chevron_right</Icon> </button>
+        </div>
       </div>
     )
   }

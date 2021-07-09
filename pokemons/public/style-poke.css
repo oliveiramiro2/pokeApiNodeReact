@@ -52,7 +52,8 @@ body {
 
 .card .card-content {
     padding: 25%;
-    padding-left: 10%;
+    padding-left: 8%;
+    padding-top: 30%;
     font-size: 30px;
 }
 
@@ -62,20 +63,38 @@ body {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #000;
+    font-size: 20px;
 }
 
-ul:not(.browser-default){
-    padding: 0 40%;
-    margin: 50px auto;
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover{
+    color: #fff;
+    transition: ease-in-out;
+    font-size: 20px;
+}
+
+.paginator {
+    padding: 0 44%;
+    padding-right: 0;
+    margin: 40px auto;
 }
 
 .pagination li a {
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .pagination li a:hover {
     transition: ease-in-out;
     color: rgb(255, 8, 8);
     font-size: 25px;
+}
+
+.pag-anterior, .pag-proxima {
+    background-color: rgba(255, 255, 255, 0);
+    margin: auto 10px;
+}
+
+.material-icons {
+    font-size: 45px;
+    color: #fff;
 }
