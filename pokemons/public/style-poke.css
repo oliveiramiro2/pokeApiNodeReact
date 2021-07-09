@@ -1,7 +1,8 @@
 body {
     background-image: url(poke_background.jpg);
     background-attachment: fixed;
-    background-repeat: repeat-x;
+	background-size: cover;
+	background-position:bottom;
 }
 
 .grid {
