@@ -34,7 +34,7 @@ body {
 .horizontal {
     margin: 10px;
     background-color: rgba(223, 235, 233, 0.445);
-   
+    border-radius: 13px;
 }
 
 .horizontal:hover {

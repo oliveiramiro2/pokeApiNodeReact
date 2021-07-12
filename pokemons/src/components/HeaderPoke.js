@@ -1,35 +1,20 @@
 import React from 'react'
-import { Navbar, NavItem, Icon } from 'react-materialize'
-
 
 export default function HeaderBlog(props){
     return (
         <div className='header-blog'>
-            <Navbar
-                alignLinks="right"
-                brand={<p className="brand-logo">Pokedex</p>}
-                id="mobile-nav"
-                menuIcon={<Icon>menu</Icon>}
-                options={{
-                    draggable: true,
-                    edge: 'left',
-                    inDuration: 250,
-                    onCloseEnd: null,
-                    onCloseStart: null,
-                    onOpenEnd: null,
-                    onOpenStart: null,
-                    outDuration: 200,
-                    preventScrolling: true
-                }}
-                search
-            >
-                <NavItem href="">
-                    Getting started
-                </NavItem>
-                <NavItem href="">
-                    Components
-                </NavItem>
-            </Navbar>
+            <nav>
+                <div className='nav-wrapper'>
+                    <form>
+                        <div className='input-field col'>
+                            <input type='search' id='TextInput-3'></input>
+                            <label className='label-icon' for='TextInput-3'>
+                                <i className='material-icons'>search</i>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </nav>
         </div>
     )
     
