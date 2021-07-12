@@ -13,6 +13,7 @@ export default class App extends Component {
     pokemons : [],
     proximaPag : {},
     anteriorPag : {},
+    buscaPoke : {},
   } 
 
   componentDidMount() {
@@ -20,19 +21,17 @@ export default class App extends Component {
   }
 
   
-  loadpokemon = async (url = Globais.urlAtual) => {
-    Globais.urlAtual = url
-    console.log(`url atual ${Globais.numPagBase}`)
+  loadpokemon = async (url = Globais.urlAtual, busca = 0) => {
+    if(busca){
+      
+    }else{
+
+    }
     try{
       const response = await axios.get(url)
       const pokemons = response.data.results
-      console.log(`try ${response.data.next}`)
-      const proximaPag = {
-        proximaPag: response.data.next,
-      }
-      const anteriorPag = {
-        anteriorPag: response.data.previous
-      }
+      const proximaPag = {proximaPag: response.data.next}
+      const anteriorPag = {anteriorPag: response.data.previous}
       this.setState({ 
         pokemons,
         proximaPag,
@@ -41,13 +40,8 @@ export default class App extends Component {
     }catch{
       const response = await axios.get(this.apiLinkTodos)
       const pokemons = response.data.results
-      console.log('catch '+response.data.next)
-      const proximaPag = {
-        proximaPag: response.data.next,
-      }
-      const anteriorPag = {
-        anteriorPag: response.data.previous
-      }
+      const proximaPag = {proximaPag: response.data.next}
+      const anteriorPag = {anteriorPag: response.data.previous}
       this.setState({ 
         pokemons,
         proximaPag,
@@ -59,7 +53,7 @@ export default class App extends Component {
   render(){
     return (
       <div className='Grid'>
-        <HeaderPoke />
+        <HeaderPoke stateBusca={this.setState}/>
         <CardsPoke 
           pokemons={this.state.pokemons} 
         />
