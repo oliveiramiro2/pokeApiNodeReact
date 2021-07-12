@@ -74,25 +74,42 @@ body {
 }
 
 .paginator {
-    padding: 0 44%;
+    padding: 0 40%;
     padding-right: 0;
     margin: 40px auto;
+    display: inline-block;
+    width: 100%;
 }
 
-.pagination li a {
-    color: #fff;
-    font-size: 15px;
+.container-paginator {
+    display: flex;
+    float: left;
 }
 
-.pagination li a:hover {
-    transition: ease-in-out;
-    color: rgb(255, 8, 8);
-    font-size: 25px;
+.lista-pag {
+    display: flex;
+    float: left;
+}
+
+.lista-pag button {
+    font-size: 20px;
+    font-family:monospace;
+    background-color: rgba(255, 235, 205, 0);
+    color: blanchedalmond;
+}
+
+.lista-pag button:hover {
+    background-color: rgb(120, 117, 122);
+    transform: translateX(-3px) translateY(-1px);
+    transition: ease-in-out 0.7s;
+}
+
+.active {
+    background-color: rgba(12, 8, 245, 0.603);
 }
 
 .pag-anterior, .pag-proxima {
     background-color: rgba(255, 255, 255, 0);
-    margin: auto 10px;
 }
 
 .material-icons {

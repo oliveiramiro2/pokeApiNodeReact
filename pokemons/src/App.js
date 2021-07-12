@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Icon } from 'react-materialize';
 import './App.css';
 
 import HeaderPoke from './components/HeaderPoke'
@@ -7,9 +6,6 @@ import CardsPoke from './components/CardsPoke'
 import Pagination from './components/Pagination'
 import Globais from './components/Globais'
 import axios from 'axios';
-
-///* global vai controlar a ordem das fotos modificando o link apenas por um numero */
-global.atual = null
 
 export default class App extends Component {
 
@@ -20,17 +16,17 @@ export default class App extends Component {
   } 
 
   componentDidMount() {
-      this.loadpokemon()
-    }
-
+    this.loadpokemon()
+  }
 
   
-  apiLinkTodos = 'https://pokeapi.co/api/v2/pokemon'
-  loadpokemon = async (url = null) => {
+  loadpokemon = async (url = Globais.urlAtual) => {
+    Globais.urlAtual = url
+    console.log(`url atual ${Globais.numPagBase}`)
     try{
       const response = await axios.get(url)
       const pokemons = response.data.results
-      console.log(`try ${pokemons}`)
+      console.log(`try ${response.data.next}`)
       const proximaPag = {
         proximaPag: response.data.next,
       }
@@ -45,7 +41,7 @@ export default class App extends Component {
     }catch{
       const response = await axios.get(this.apiLinkTodos)
       const pokemons = response.data.results
-      console.log('catch'+response.data)
+      console.log('catch '+response.data.next)
       const proximaPag = {
         proximaPag: response.data.next,
       }
@@ -59,22 +55,6 @@ export default class App extends Component {
       })
     }   
   }
-
-  nextPag = () => {
-    const { proximaPag } = this.state
-    if(proximaPag.next === null) return
-    const nextPag = proximaPag.proximaPag
-    Globais.numPagBase = Globais.numPagBase+1
-    this.loadpokemon(nextPag)
-  }
-
-  prevPag = () => {
-    const { anteriorPag } = this.state
-    if(anteriorPag.previous === null) return
-    const prevPag = anteriorPag.anteriorPag
-    Globais.numPagBase = Globais.numPagBase-1
-    this.loadpokemon(prevPag)
-  }
   
   render(){
     return (
@@ -83,11 +63,7 @@ export default class App extends Component {
         <CardsPoke 
           pokemons={this.state.pokemons} 
         />
-        <Pagination nextPag={this.prevPag} prevPag={this.prevPag} infoPagAtual={this.state.pokemons}/>
-         <div className='paginator'>
-          <button className='pag-anterior' onClick={this.prevPag}> <Icon>chevron_left</Icon> </button>
-          <button className='pag-proxima' onClick={this.nextPag}> <Icon>chevron_right</Icon> </button>
-        </div>
+        <Pagination refreshPag={this.loadpokemon} />
       </div>
     )
   }

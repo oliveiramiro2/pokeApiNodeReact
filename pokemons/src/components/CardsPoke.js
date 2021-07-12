@@ -3,7 +3,7 @@ import { Row, Col, Card, CardTitle } from 'react-materialize'
 
 import Globais from './Globais'
 
-const CardsPoke = (props) => {
+export default function CardsPoke(props){
     return(
         <div className='cards-poke'>
             <Row>
@@ -12,19 +12,21 @@ const CardsPoke = (props) => {
                     s={12}
                 >
                     {props.pokemons.map(
-                        (poke, id) =>                            
-                           <Card
-                                key={id}
-                                actions={[
-                                    <p>Informações</p>
-                                ]}
-                                header={<CardTitle image={
-                                   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${ (Globais.numPagBase*20) + id + 1 }.png`}
-                                />}
-                                horizontal
-                                >
-                                {poke.name}
-                            </Card> 
+                        (poke, id) =>
+                            <div key={id}>
+                                <Card       
+                                    actions={[
+                                        <p>Informações</p>
+                                    ]}
+                                    header={<CardTitle image={
+                                    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${ (Globais.numPagBase*20) + id + 1 }.png`}
+                                    />}
+                                    horizontal
+                                    >
+                                    {poke.name}
+                                </Card> 
+                            </div>                            
+                            
                     )} 
                 </Col>
             </Row>
@@ -32,5 +34,3 @@ const CardsPoke = (props) => {
         
     )
 }
-
-export default CardsPoke

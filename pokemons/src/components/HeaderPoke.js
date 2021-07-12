@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar, NavItem, Icon } from 'react-materialize'
 
 
-const HeaderBlog = (props) => {
+export default function HeaderBlog(props){
     return (
         <div className='header-blog'>
             <Navbar
@@ -34,5 +34,3 @@ const HeaderBlog = (props) => {
     )
     
 }
-
-export default HeaderBlog
