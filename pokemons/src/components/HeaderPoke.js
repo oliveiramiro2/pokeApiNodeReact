@@ -7,7 +7,7 @@ const HeaderBlog = (props) => {
         <div className='header-blog'>
             <Navbar
                 alignLinks="right"
-                brand={<a className="brand-logo" href="#">Pokedex</a>}
+                brand={<p className="brand-logo">Pokedex</p>}
                 id="mobile-nav"
                 menuIcon={<Icon>menu</Icon>}
                 options={{
@@ -23,10 +23,10 @@ const HeaderBlog = (props) => {
                 }}
                 search
             >
-                <NavItem href="#">
+                <NavItem href="">
                     Getting started
                 </NavItem>
-                <NavItem href="#">
+                <NavItem href="">
                     Components
                 </NavItem>
             </Navbar>

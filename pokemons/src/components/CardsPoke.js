@@ -1,5 +1,7 @@
 import React from 'react'
-import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
+import { Row, Col, Card, CardTitle } from 'react-materialize'
+
+import Globais from './Globais'
 
 const CardsPoke = (props) => {
     return(
@@ -14,14 +16,12 @@ const CardsPoke = (props) => {
                            <Card
                                 key={id}
                                 actions={[
-                                    <a key="1" href="#">Informações</a>
+                                    <p>Informações</p>
                                 ]}
-                                closeIcon={<Icon>close</Icon>}
                                 header={<CardTitle image={
-                                   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.pag + id +1 }.png`}
+                                   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${ (Globais.numPagBase*20) + id + 1 }.png`}
                                 />}
                                 horizontal
-                                revealIcon={<Icon>more_vert</Icon>}
                                 >
                                 {poke.name}
                             </Card> 
