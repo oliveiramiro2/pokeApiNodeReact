@@ -1,11 +1,13 @@
 import React from 'react'
 
+import Globais from './Globais'
+
 export default function HeaderBlog(props){
-    const [Busca, setBusca] = React.useState('')
 
     const setSearch = e =>{
-        setBusca(e.target.value)
-        props.stateBusca({buscaPoke : Busca})
+        Globais.urlPesquisa = e.target.value
+        e.target.value !== '' ? Globais.filtroAtivo = true : Globais.filtroAtivo = false
+        props.pesquisa()
     }
 
     //console.log(props.stateBusca)

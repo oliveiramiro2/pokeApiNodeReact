@@ -1,0 +1,91 @@
+/*animacao setas paginacao*/
+.pag-anterior i {
+    animation: setaes ease-in-out 1.5s infinite;
+}
+
+@keyframes setaes{
+    from {
+        transform: translateX(-4px);
+        
+        font-size: 48px;
+        color: #f80000;
+        transition: ease;
+    }
+
+    20% {
+        transform: translateX(4px);
+        font-size: 44px;
+        color: #457dd8ab;
+        transition: ease;
+    }
+
+    40% {
+        transform: translateX(-4px);
+        font-size: 48px;
+        color: #f80000;
+        transition: ease; 
+    }
+
+    60% {
+        transform: translateX(4px);     
+        font-size: 44px;
+        color: #457dd8ab;
+        transition: ease;
+    }
+
+    to {
+        transform: translateX(-4px);
+        font-size: 48px;
+        color: #f80000;
+        transition: ease;
+    }
+}
+
+.pag-anterior i:hover {
+    animation: none;
+}
+
+.pag-proxima i {
+    animation: setadir ease-in-out 1.5s infinite;
+}
+
+@keyframes setadir{
+    from {
+        transform: translateX(4px);
+        font-size: 48px;
+        color: #f80000;
+        transition: ease;
+    }
+
+    20% {
+        transform: translateX(-4px);
+        font-size: 44px;
+        color: #457dd8ab;
+        transition: ease;
+    }
+
+    40% {
+        transform: translateX(4px);
+        font-size: 48px;
+        color: #f80000;
+        transition: ease; 
+    }
+
+    60% {
+        transform: translateX(-4px);
+        font-size: 44px;
+        color: #457dd8ab;
+        transition: ease;
+    }
+
+    to {
+        transform: translateX(4px);
+        font-size: 48px;
+        color: #f80000;
+        transition: ease; 
+    }
+}
+
+.pag-proxima i:hover {
+    animation: none;
+}

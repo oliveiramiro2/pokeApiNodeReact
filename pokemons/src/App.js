@@ -13,37 +13,37 @@ export default class App extends Component {
     pokemons : [],
     proximaPag : {},
     anteriorPag : {},
-    buscaPoke : {},
   } 
 
   componentDidMount() {
     this.loadpokemon()
   }
 
+  searchPokemon = () => {
+    this.loadpokemon(Globais.urlTodosPokes, true)
+  }
   
-  loadpokemon = async (url = Globais.urlAtual, busca = 0) => {
-    if(busca){
-      
-    }else{
-
-    }
+  loadpokemon = async (url = Globais.urlAtual, search=false) => {
     try{
       const response = await axios.get(url)
       const pokemons = response.data.results
+      const filtraPoke = pokemons.filter(poke=>poke.name.startsWith(Globais.urlPesquisa))
       const proximaPag = {proximaPag: response.data.next}
       const anteriorPag = {anteriorPag: response.data.previous}
       this.setState({ 
-        pokemons,
+        pokemons : filtraPoke,
         proximaPag,
         anteriorPag,
       })
     }catch{
-      const response = await axios.get(this.apiLinkTodos)
+      const response = await axios.get(Globais.urlBase)
       const pokemons = response.data.results
+      const filtraPoke = pokemons.filter(poke=>poke.name.startsWith(Globais.urlPesquisa))
+      Globais.filtroPoke = filtraPoke
       const proximaPag = {proximaPag: response.data.next}
       const anteriorPag = {anteriorPag: response.data.previous}
       this.setState({ 
-        pokemons,
+        pokemons : filtraPoke,
         proximaPag,
         anteriorPag,
       })
@@ -53,7 +53,7 @@ export default class App extends Component {
   render(){
     return (
       <div className='Grid'>
-        <HeaderPoke stateBusca={this.setState}/>
+        <HeaderPoke pesquisa={this.searchPokemon}/>
         <CardsPoke 
           pokemons={this.state.pokemons} 
         />

@@ -51,6 +51,11 @@ body {
     padding-top: 10%;
 }
 
+.card-image img {
+    width: 96px;
+    height: 96px;
+}
+
 .card .card-content {
     padding: 25%;
     padding-left: 8%;
@@ -60,6 +65,12 @@ body {
 
 .card .card-action {
     padding: 0;
+}
+
+.card-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
@@ -96,6 +107,7 @@ body {
     font-family:monospace;
     background-color: rgba(255, 235, 205, 0);
     color: blanchedalmond;
+    margin: auto 3px;
 }
 
 .lista-pag button:hover {
@@ -104,15 +116,18 @@ body {
     transition: ease-in-out 0.7s;
 }
 
-.active {
-    background-color: rgba(12, 8, 245, 0.603);
+.active button {
+    color: rgb(255, 0, 0);
 }
 
 .pag-anterior, .pag-proxima {
     background-color: rgba(255, 255, 255, 0);
 }
 
+.pag-anterior i, .pag-proxima i {
+    color: rgb(255, 0, 0);
+}
+
 .material-icons {
     font-size: 45px;
-    color: #fff;
 }
