@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Card, CardTitle } from 'react-materialize'
 
 import Globais from './Globais'
-import pokeball from './img/pokeball.jpg'
+import pokeball from './img/pokeball.png'
 
 
 export default function CardsPoke(props){
