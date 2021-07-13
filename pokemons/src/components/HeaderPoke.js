@@ -10,7 +10,6 @@ export default function HeaderBlog(props){
         props.pesquisa()
     }
 
-    //console.log(props.stateBusca)
     return (
         <div className='header-blog'>
             <nav>

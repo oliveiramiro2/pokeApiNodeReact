@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 import HeaderPoke from './components/HeaderPoke'
@@ -7,12 +7,10 @@ import Pagination from './components/Pagination'
 import Globais from './components/Globais'
 import axios from 'axios';
 
-export default class App extends Component {
+export default class App extends React.Component {
 
   state = {
-    pokemons : [],
-    proximaPag : {},
-    anteriorPag : {},
+    pokemons : []
   } 
 
   componentDidMount() {
@@ -20,44 +18,45 @@ export default class App extends Component {
   }
 
   searchPokemon = () => {
-    this.loadpokemon(Globais.urlTodosPokes, true)
+    Globais.filtroAtivo ? 
+        this.loadpokemon(Globais.urlTodosPokes) 
+      : 
+        this.loadpokemon(Globais.urlBase) 
   }
   
-  loadpokemon = async (url = Globais.urlAtual, search=false) => {
+  loadpokemon = async (url = Globais.urlAtual) => {
     try{
       const response = await axios.get(url)
       const pokemons = response.data.results
       const filtraPoke = pokemons.filter(poke=>poke.name.startsWith(Globais.urlPesquisa))
-      const proximaPag = {proximaPag: response.data.next}
-      const anteriorPag = {anteriorPag: response.data.previous}
       this.setState({ 
-        pokemons : filtraPoke,
-        proximaPag,
-        anteriorPag,
+        pokemons : filtraPoke
       })
     }catch{
       const response = await axios.get(Globais.urlBase)
       const pokemons = response.data.results
       const filtraPoke = pokemons.filter(poke=>poke.name.startsWith(Globais.urlPesquisa))
       Globais.filtroPoke = filtraPoke
-      const proximaPag = {proximaPag: response.data.next}
-      const anteriorPag = {anteriorPag: response.data.previous}
       this.setState({ 
-        pokemons : filtraPoke,
-        proximaPag,
-        anteriorPag,
+        pokemons : filtraPoke
       })
     }   
   }
   
   render(){
+    console.log(Globais.filtroImg)
     return (
       <div className='Grid'>
         <HeaderPoke pesquisa={this.searchPokemon}/>
         <CardsPoke 
           pokemons={this.state.pokemons} 
         />
-        <Pagination refreshPag={this.loadpokemon} />
+        {Globais.filtroAtivo ? 
+            <div />
+          :
+            <Pagination refreshPag={this.loadpokemon} />
+        }
+        
       </div>
     )
   }

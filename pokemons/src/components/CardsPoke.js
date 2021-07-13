@@ -2,7 +2,6 @@ import React from 'react'
 import { Row, Col, Card, CardTitle } from 'react-materialize'
 
 import Globais from './Globais'
-import pokeball from './img/pokeball.png'
 
 
 export default function CardsPoke(props){
@@ -18,17 +17,21 @@ export default function CardsPoke(props){
                         (poke, id) =>
                             <div key={id}>
                                 {Globais.filtroAtivo ?
-                                        <Card       
+                                        <Card
+                                            key={id}       
                                             actions={[
                                                 <p>Informações</p>
                                             ]}
-                                            header={<CardTitle image={pokeball}/>}
+                                            header={<CardTitle image={
+                                                `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.slice(34, -1)}.png`
+                                            }/>}
                                             horizontal
                                             >
                                             {poke.name}
                                         </Card> 
                                     :
-                                        <Card       
+                                        <Card    
+                                            key={id}    
                                             actions={[
                                                 <p>Informações</p>
                                             ]}
@@ -39,7 +42,7 @@ export default function CardsPoke(props){
                                             >
                                             {poke.name}
                                         </Card> 
-                                } 
+                                }
                             </div>
                     )} 
                 </Col>
