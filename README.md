@@ -22,13 +22,13 @@
           <h2>Resultado no brownser</h2>
           <br />
           <h3><p>Filtro por pesquisa</p></h3>
-          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/tree/main/imgs_readme/pesquisa1.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pesquisa1.png?raw=true" height="300"/>
           <br />
-          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/tree/main/imgs_readme/pesquisa2.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pesquisa2.png?raw=true" height="300"/>
           <br />
           <h3><p>Paginação por seta e número</p></h3>
-          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/tree/main/imgs_readme/paginacao1.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/paginacao1.png?raw=true" height="300"/>
           <br />
-          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/tree/main/imgs_readme/paginacao2.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/paginacao2.png?raw=true" height="300"/>
      </div>
 </div>
