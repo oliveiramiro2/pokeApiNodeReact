@@ -1,5 +1,5 @@
-<div align="center" style="background-color='blue';">
-     <h2>Cards Com Pokemon Api</h2>
+<div align="center">
+     <h2 color="blue">Cards Com Pokemon Api</h2>
      <br />
      <hr />
      <img  src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" height="300"/>
@@ -8,7 +8,7 @@
      <hr />
      <br />
      <br />
-     <div align="left">
+     <div align="center">
           <ul>
                <li>Tecnologia Utilizadas</li>
                <li>React</li>
