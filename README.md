@@ -1,5 +1,5 @@
 <div align="center">
-     <h2 color="blue">Cards Com Pokemon Api</h2>
+     <h2 style="color: blue;">Cards Com Pokemon Api</h2>
      <br />
      <hr />
      <img  src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" height="300"/>
@@ -9,7 +9,7 @@
      <br />
      <br />
      <div align="center">
-          <ul>
+          <ul style="list-style: none;">
                <li>Tecnologia Utilizadas</li>
                <li>React</li>
                <li>PokeApi</>
@@ -18,9 +18,9 @@
      <br />
      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3zWuwYa3--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pdib9r9rk5j1m7oala1p.png" height="300"/>
      <br />
+     <hr />
      <div  align="center">
           <h2>Resultado no brownser</h2>
-          <br />
           <h3><p>Filtro por pesquisa</p></h3>
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pesquisa1.png?raw=true" height="300"/>
           <br />
