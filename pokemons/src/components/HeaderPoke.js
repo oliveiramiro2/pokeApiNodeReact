@@ -16,7 +16,7 @@ export default function HeaderBlog(props){
                 <div className='nav-wrapper'>
                     <form>
                         <div className='input-field col'>
-                            <input type='search' id='TextInput-3' name='Busca' onChange={e=>setSearch(e)}></input>
+                            <input type='search' id='TextInput-3' name='Busca' autoComplete='off' onChange={e=>setSearch(e)}></input>
                             <label className='label-icon' for='TextInput-3'>
                                 <i className='material-icons'>search</i>
                             </label>

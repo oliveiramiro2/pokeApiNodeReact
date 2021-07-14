@@ -44,7 +44,6 @@ export default class App extends React.Component {
   }
   
   render(){
-    console.log(Globais.filtroImg)
     return (
       <div className='Grid'>
         <HeaderPoke pesquisa={this.searchPokemon}/>
@@ -52,7 +51,7 @@ export default class App extends React.Component {
           pokemons={this.state.pokemons} 
         />
         {Globais.filtroAtivo ? 
-            <div />
+            <p />
           :
             <Pagination refreshPag={this.loadpokemon} />
         }
