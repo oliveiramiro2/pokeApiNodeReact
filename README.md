@@ -1,5 +1,5 @@
-<div style=(justify-content=center;align-items=center;)>
-     <h3>Pokemon Api</h3>
+<div style=(justify-content="center";align-items="center";align-text="center";)>
+     <h2>Cards Com Pokemon Api</h2>
      <hr />
      <img  src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" height="300"/>
      <br>
