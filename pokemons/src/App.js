@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
@@ -54,10 +53,8 @@ export default class App extends React.Component {
             <p />
           :
             <Pagination refreshPag={this.loadpokemon} />
-        }
-        
+        }        
       </div>
     )
-  }
-  
+  }  
 }
