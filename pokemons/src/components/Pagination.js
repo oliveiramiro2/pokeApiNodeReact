@@ -16,23 +16,16 @@ function Pagination({ pag, changePage, changePokes }){
     const nextPag = () => {        
         setControl(control+1)
         changePage(control)
-        console.log('proxima', control)
-        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
-        console.log('proxima 2', control)
     }
 
     const prevPag = () => {
         setControl(control-1)
         changePage(control)
-        console.log('anterior', control)
-        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
-        console.log('anterior 2', control)
     }
 
     const clickPag = (pagina) => {
         setControl(pagina)
         changePage(control)
-        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
     }
 
     return(
