@@ -53,9 +53,9 @@ export default function Pagination(props){
                                 </button>
                             </li>
                         :
-                            <li>
+                            <>
 
-                            </li>
+                            </ >
                         }
                         {(Globais.numPagBase) > 0 ?
                             <li className='lista-pag'>
