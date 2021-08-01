@@ -1,5 +1,7 @@
+import { doRequestPoke } from './../../api/pokeApi'
+
 const initialState = {
-    pokemons : []
+    pokemons : doRequestPoke()
 }
 
 const pokemonsReducer = (state=initialState.pokemons, action) => {

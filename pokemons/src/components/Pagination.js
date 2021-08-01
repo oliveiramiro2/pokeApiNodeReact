@@ -1,30 +1,44 @@
 import React from 'react'
 import { Icon } from 'react-materialize'
+import { connect } from 'react-redux'
+
+import { changePage } from './../store/action/paginacaoA'
+import { changePokes } from './../store/action/consultaApi'
 import Globais from './Globais'
 
-export default function Pagination(props){
-    const nextPag = () => {
-        Globais.numPagBase = Globais.numPagBase+1
-        Globais.urlAtual = Globais.urlBase.concat(`?offset=${Globais.numPagBase*20}&limit=20`)
-        props.refreshPag()
+function Pagination({ pag, changePage, changePokes }){
+    const [control, setControl] = React.useState(0)
+
+    React.useEffect(() => {
+        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
+    }, [changePokes, control]) 
+        
+    const nextPag = () => {        
+        setControl(control+1)
+        changePage(control)
+        console.log('proxima', control)
+        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
+        console.log('proxima 2', control)
     }
 
     const prevPag = () => {
-        Globais.numPagBase = Globais.numPagBase-1
-        Globais.urlAtual = Globais.urlBase.concat(`?offset=${Globais.numPagBase*20}&limit=20`)
-        props.refreshPag()
+        setControl(control-1)
+        changePage(control)
+        console.log('anterior', control)
+        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
+        console.log('anterior 2', control)
     }
 
-    const clickPag = (pag) => {
-        Globais.numPagBase = pag
-        Globais.urlAtual = Globais.urlBase.concat(`?offset=${Globais.numPagBase*20}&limit=20`)
-        props.refreshPag()
+    const clickPag = (pagina) => {
+        setControl(pagina)
+        changePage(control)
+        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
     }
 
     return(
         <div className='paginator'>
             <div className='container-paginator'>
-                {Globais.numPagBase > 0 ?
+                {control > 0 ?
                     <div>
                         <button 
                             className='pag-anterior' 
@@ -33,23 +47,18 @@ export default function Pagination(props){
                         </button>
                     </div>
                 :
-                    <div>
-                        <button 
-                            className='pag-anterior' 
-                        > 
-                            <Icon>chevron_left</Icon>
-                        </button>
-                    </div>
+                    <>
+                    </>
                 }
                 <div>
                     <ul>
-                        {(Globais.numPagBase-1) > 0 ?
+                        {(control-1) > 0 ?
                             <li className='lista-pag'>
                                 <button 
                                     className='paginacao-num'
-                                    onClick={()=>clickPag(Globais.numPagBase-2)} 
+                                    onClick={()=>clickPag(control-2)} 
                                 >
-                                    {Globais.numPagBase-1}
+                                    {control-1}
                                 </button>
                             </li>
                         :
@@ -57,42 +66,41 @@ export default function Pagination(props){
 
                             </ >
                         }
-                        {(Globais.numPagBase) > 0 ?
+                        {(control) > 0 ?
                             <li className='lista-pag'>
                                 <button 
                                     className='paginacao-num'
-                                    onClick={()=>clickPag(Globais.numPagBase-1)} 
+                                    onClick={()=>clickPag(control-1)} 
                                 >
-                                    {Globais.numPagBase}
+                                    {control}
                                 </button>
                             </li>
                         :
-                            <li>
-
-                            </li>
+                            <>
+                            </>
                         }
                         <li className='lista-pag active'>
                             <button 
                                 className='paginacao-num'
-                                onClick={()=>clickPag(Globais.numPagBase)} 
+                                onClick={()=>clickPag(control)} 
                             >
-                            {Globais.numPagBase+1}
+                            {control+1}
                             </button>
                         </li>
                         <li className='lista-pag'>
                             <button 
                                 className='paginacao-num'
-                                onClick={()=>clickPag(Globais.numPagBase+1)} 
+                                onClick={()=>clickPag(control+1)} 
                             >
-                            {Globais.numPagBase+2}
+                            {control+2}
                             </button>
                         </li>
                         <li className='lista-pag'>
                             <button 
                                 className='paginacao-num'
-                                onClick={()=>clickPag(Globais.numPagBase+2)} 
+                                onClick={()=>clickPag(control+2)} 
                             >
-                                {Globais.numPagBase+3}
+                                {control+3}
                             </button>
                         </li>
                     </ul>
@@ -109,3 +117,9 @@ export default function Pagination(props){
     )
     
 }
+
+const mapStateToProps = state => {
+    return { pag: state }
+}
+
+export default connect(mapStateToProps, { changePage, changePokes })(Pagination)

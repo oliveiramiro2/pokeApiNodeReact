@@ -2,14 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, Card, CardTitle } from 'react-materialize'
 
-import Globais from './Globais'
-import { changePokes } from './../store/action/consultaApi'
-
-function CardsPoke({pokemons, changePokes}){
-    React.useEffect(()=>{
-        changePokes()
-    }, [changePokes])
-    
+function CardsPoke({ pokemons }){    
     if (pokemons.pokemons){
         return(
             <div className='cards-poke'>
@@ -20,33 +13,18 @@ function CardsPoke({pokemons, changePokes}){
                     >   
                     {pokemons.pokemons.map((poke, id) =>
                         <div key={id}>
-                            {Globais.filtroAtivo ?
-                                <Card
-                                    key={id}       
-                                    actions={[
-                                        <p>Informações</p>
-                                    ]}
-                                    header={<CardTitle image={
-                                        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.slice(34, -1)}.png`
-                                    }/>}
-                                    horizontal
-                                    >
-                                    {poke.name}
-                                </Card> 
-                            :
-                                <Card    
-                                    key={id}    
-                                    actions={[
-                                        <p>Informações</p>
-                                    ]}
-                                    header={<CardTitle image={
-                                    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${ (Globais.numPagBase*20) + id + 1 }.png`}
-                                    />}
-                                    horizontal
-                                    >
-                                    {poke.name}
-                                </Card> 
-                            }
+                            <Card    
+                                key={id}    
+                                actions={[
+                                    <p>Informações</p>
+                                ]}
+                                header={<CardTitle image={
+                                `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.slice(34, -1)}.png`}
+                                />}
+                                horizontal
+                                >
+                                {poke.name}
+                            </Card> 
                         </div>
                     )}    
                     </Col>
@@ -62,7 +40,9 @@ function CardsPoke({pokemons, changePokes}){
 }
 
 const mapStateToProps = state => {
-    return { pokemons: state.pokemons }
+    return { 
+        pokemons: state.pokemons
+    }
 }
 
-export default connect(mapStateToProps, { changePokes })(CardsPoke)
+export default connect(mapStateToProps)(CardsPoke)

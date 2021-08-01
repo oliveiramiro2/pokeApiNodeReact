@@ -6,7 +6,6 @@ import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
 import Pagination from './components/Pagination'
 import Globais from './components/Globais'
-import axios from 'axios';
 
 export default class App extends React.Component {  
   render(){
@@ -16,7 +15,8 @@ export default class App extends React.Component {
           <HeaderPoke />
           <CardsPoke />
           {Globais.filtroAtivo ? 
-            <p />
+            <>
+            </>
           :
             <Pagination />
           }
