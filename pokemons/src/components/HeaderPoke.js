@@ -1,15 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import Globais from './Globais'
+import { changeSearch } from '../store/action/pesquisaA'
 
-export default function HeaderBlog(props){
-
-    const setSearch = e =>{
-        Globais.urlPesquisa = e.target.value
-        e.target.value !== '' ? Globais.filtroAtivo = true : Globais.filtroAtivo = false
-        props.pesquisa()
+function HeaderBlog({ changeSearch }){
+    const setSearch = e => {    
+        changeSearch(e.target.value)
     }
-
     return (
         <div className='header-blog'>
             <nav>
@@ -26,5 +23,10 @@ export default function HeaderBlog(props){
             </nav>
         </div>
     )
-    
 }
+
+const mapStateToProps = state => {
+    return { text: state.text }
+}
+
+export default connect(mapStateToProps, { changeSearch })(HeaderBlog)
