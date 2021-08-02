@@ -23,7 +23,14 @@ body {
     display: inline;
 }
 
-
+.container-animacao {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .row .col.m6 {
     display: grid;
@@ -35,6 +42,7 @@ body {
     margin: 10px;
     background-color: rgba(223, 235, 233, 0.445);
     border-radius: 13px;
+    width: 98%;
 }
 
 .horizontal:hover {
@@ -46,20 +54,15 @@ body {
     color: #fff;
 }
 
-.card-image{
+.card-image img {
+    width: 96px;
+    height: 96px;
     margin-left: 10px;
     padding-top: 10%;
 }
 
-.card-image img {
-    width: 96px;
-    height: 96px;
-}
-
 .card .card-content {
-    padding: 25%;
-    padding-left: 8%;
-    padding-top: 30%;
+    padding-left: 0;
     font-size: 30px;
 }
 
@@ -84,6 +87,13 @@ body {
     font-size: 20px;
 }
 
+.icones-poke {
+    font-size: 100px;
+    color: rgb(30, 18, 202);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgb(202, 199, 18) 5%, rgba(255, 255, 255, 0) 65%);
+    height: auto;
+    padding: auto;
+}
 .paginator {
     padding: 0 40%;
     padding-right: 0;

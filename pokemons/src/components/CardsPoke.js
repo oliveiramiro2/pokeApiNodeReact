@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { Row, Col, Card, CardTitle } from 'react-materialize'
 
 import changePokes from './../store/action/consultaApi'
+import { CgPokemon } from 'react-icons/cg'
+import { SiPokemon } from 'react-icons/si'
 
 function CardsPoke({ pokemons }){
     if(pokemons.pokemons){
@@ -17,14 +19,22 @@ function CardsPoke({ pokemons }){
                         <div key={id}>
                             <Card     
                                 actions={[
-                                    <p>Informações</p>
+                                    <div>
+                                        <p>
+                                            <CgPokemon/> ----- Informações
+                                        </p>
+                                    </div>
                                 ]}
+                                
                                 header={<CardTitle image={
                                 `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.slice(34, -1)}.png`}
-                                />}
+                                /> }
+                                
                                 horizontal
-                                >
-                                {poke.name}
+                                >      
+                                <i className='icones-poke'><SiPokemon/></i>
+                                <br/>                       
+                                {poke.name}    
                             </Card> 
                         </div>
                     )}    
@@ -34,7 +44,11 @@ function CardsPoke({ pokemons }){
         )
     }else{
         return (
-            <h5>Carregando...</h5>
+            <div className='container-animacao'>
+                <h5>Carregando...</h5>
+                <i><CgPokemon/></i><br/>
+                <i><SiPokemon/></i>
+            </div>    
         )
     }
     
