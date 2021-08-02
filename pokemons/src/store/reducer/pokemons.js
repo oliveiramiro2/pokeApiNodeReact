@@ -1,13 +1,11 @@
-import { doRequestPoke } from './../../api/pokeApi'
-
 const initialState = {
-    pokemons : doRequestPoke()
+    pokemons : []
 }
 
 const pokemonsReducer = (state=initialState.pokemons, action) => {
     switch(action.type){
         case "TROCA_POKES":
-            return { state, pokemons: action.payload }
+            return { pokemons: action.payload }
         default:
             return state
     }

@@ -3,15 +3,17 @@ import { Icon } from 'react-materialize'
 import { connect } from 'react-redux'
 
 import { changePage } from './../store/action/paginacaoA'
-import { changePokes } from './../store/action/consultaApi'
+import changePokes from './../store/action/consultaApi'
 import Globais from './Globais'
 
-function Pagination({ pag, changePage, changePokes }){
+function Pagination({ changePage, changePokes, text }){
     const [control, setControl] = React.useState(0)
 
     React.useEffect(() => {
-        changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
-    }, [changePokes, control]) 
+        if(text === '')
+            console.log('entrou paginacao', text)
+            changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
+    }, [changePokes, control, text])
         
     const nextPag = () => {        
         setControl(control+1)
@@ -112,7 +114,10 @@ function Pagination({ pag, changePage, changePokes }){
 }
 
 const mapStateToProps = state => {
-    return { pag: state }
+    return { 
+        pag: state,
+        text: state.text
+    }
 }
 
 export default connect(mapStateToProps, { changePage, changePokes })(Pagination)

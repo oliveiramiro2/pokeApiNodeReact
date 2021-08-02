@@ -2,8 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, Card, CardTitle } from 'react-materialize'
 
-function CardsPoke({ pokemons }){    
-    if (pokemons.pokemons){
+import changePokes from './../store/action/consultaApi'
+
+function CardsPoke({ pokemons }){
+    if(pokemons.pokemons){
         return(
             <div className='cards-poke'>
                 <Row>
@@ -13,8 +15,7 @@ function CardsPoke({ pokemons }){
                     >   
                     {pokemons.pokemons.map((poke, id) =>
                         <div key={id}>
-                            <Card    
-                                key={id}    
+                            <Card     
                                 actions={[
                                     <p>Informações</p>
                                 ]}
@@ -41,8 +42,8 @@ function CardsPoke({ pokemons }){
 
 const mapStateToProps = state => {
     return { 
-        pokemons: state.pokemons
+        pokemons: state.pokemons,
     }
 }
 
-export default connect(mapStateToProps)(CardsPoke)
+export default connect(mapStateToProps, { changePokes })(CardsPoke)
