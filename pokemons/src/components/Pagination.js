@@ -10,9 +10,9 @@ function Pagination({ changePage, changePokes, text }){
     const [control, setControl] = React.useState(0)
 
     React.useEffect(() => {
-        if(text === '')
-            console.log('entrou paginacao', text)
+        if(text === ''){
             changePokes(`${Globais.urlBase}?offset=${control*20}&limit=20`)
+        }
     }, [changePokes, control, text])
         
     const nextPag = () => {        

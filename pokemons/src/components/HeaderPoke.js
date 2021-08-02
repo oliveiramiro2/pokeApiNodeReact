@@ -5,22 +5,31 @@ import changePokes from '../store/action/consultaApi'
 import { changeSearch } from '../store/action/pesquisaA'
 import Globais from './Globais'
 
-function HeaderBlog({ changeSearch, text, changePokes }){
-    const setSearch = e => {    
-        changeSearch(e.target.value)
-        if(text !== ''){
-            console.log('true filtro', text)
-            Globais.filtroAtivo = true
-        }else if (text === ''){
-            console.log('false filtro', text)
-            Globais.filtroAtivo = false
+function HeaderBlog({ changeSearch, text, changePokes, pag }){
+    const [controle, setControle] = React.useState(false)
+    const setSearch = e => {   
+        if(e.target.value !== ""){ 
+            changeSearch(e.target.value)
+        }else{
+            changeSearch('parar:D')
         }
+        
     }
+    
     React.useEffect(() => {
-        if(text !== '')
-            console.log('entrou filtro', text)
-            changePokes(Globais.urlTodosPokes, text.text)  
-    }, [changePokes, text]) 
+        if(controle){
+            changePokes(Globais.urlTodosPokes, text.text) 
+        }else if(text.text === 'parar:D'){
+            changePokes(`${Globais.urlBase}?offset=${pag*20}&limit=20`)
+        }
+        if(text === '' || text.text === 'parar:D'){                       
+            setControle(false)
+            Globais.filtroAtivo = controle
+        }else{ 
+            setControle(true)          
+            Globais.filtroAtivo = controle
+        }
+    }, [changePokes, text, controle, setControle]) 
     return (
         <div className='header-blog'>
             <nav>
