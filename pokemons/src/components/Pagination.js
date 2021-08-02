@@ -30,86 +30,97 @@ function Pagination({ changePage, changePokes, text }){
         changePage(control)
     }
 
-    return(
-        <div className='paginator'>
-            <div className='container-paginator'>
-                {control > 0 ?
+    if(text === '' || text.text === 'parar:D'){
+        return(
+            <div className='paginator'>
+                <div className='container-paginator'>
+                    {control > 0 ?
+                        <div>
+                            <button 
+                                className='pag-anterior' 
+                                onClick={prevPag}> 
+                                <Icon>chevron_left</Icon>
+                            </button>
+                        </div>
+                    :
+                        <>
+                        </>
+                    }
+                    <div>
+                        <ul>
+                            {(control-1) > 0 ?
+                                <li className='lista-pag'>
+                                    <button 
+                                        className='paginacao-num'
+                                        onClick={()=>clickPag(control-2)} 
+                                    >
+                                        {control-1}
+                                    </button>
+                                </li>
+                            :
+                                <>
+    
+                                </ >
+                            }
+                            {(control) > 0 ?
+                                <li className='lista-pag'>
+                                    <button 
+                                        className='paginacao-num'
+                                        onClick={()=>clickPag(control-1)} 
+                                    >
+                                        {control}
+                                    </button>
+                                </li>
+                            :
+                                <>
+                                </>
+                            }
+                            <li className='lista-pag active'>
+                                <button 
+                                    className='paginacao-num'
+                                    onClick={()=>clickPag(control)} 
+                                >
+                                {control+1}
+                                </button>
+                            </li>
+                            <li className='lista-pag'>
+                                <button 
+                                    className='paginacao-num'
+                                    onClick={()=>clickPag(control+1)} 
+                                >
+                                {control+2}
+                                </button>
+                            </li>
+                            <li className='lista-pag'>
+                                <button 
+                                    className='paginacao-num'
+                                    onClick={()=>clickPag(control+2)} 
+                                >
+                                    {control+3}
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                     <div>
                         <button 
-                            className='pag-anterior' 
-                            onClick={prevPag}> 
-                            <Icon>chevron_left</Icon>
+                            className='pag-proxima' 
+                            onClick={nextPag}> 
+                            <Icon>chevron_right</Icon> 
                         </button>
                     </div>
-                :
-                    <>
-                    </>
-                }
-                <div>
-                    <ul>
-                        {(control-1) > 0 ?
-                            <li className='lista-pag'>
-                                <button 
-                                    className='paginacao-num'
-                                    onClick={()=>clickPag(control-2)} 
-                                >
-                                    {control-1}
-                                </button>
-                            </li>
-                        :
-                            <>
-
-                            </ >
-                        }
-                        {(control) > 0 ?
-                            <li className='lista-pag'>
-                                <button 
-                                    className='paginacao-num'
-                                    onClick={()=>clickPag(control-1)} 
-                                >
-                                    {control}
-                                </button>
-                            </li>
-                        :
-                            <>
-                            </>
-                        }
-                        <li className='lista-pag active'>
-                            <button 
-                                className='paginacao-num'
-                                onClick={()=>clickPag(control)} 
-                            >
-                            {control+1}
-                            </button>
-                        </li>
-                        <li className='lista-pag'>
-                            <button 
-                                className='paginacao-num'
-                                onClick={()=>clickPag(control+1)} 
-                            >
-                            {control+2}
-                            </button>
-                        </li>
-                        <li className='lista-pag'>
-                            <button 
-                                className='paginacao-num'
-                                onClick={()=>clickPag(control+2)} 
-                            >
-                                {control+3}
-                            </button>
-                        </li>
-                    </ul>
                 </div>
-                <div>
-                    <button 
-                        className='pag-proxima' 
-                        onClick={nextPag}> 
-                        <Icon>chevron_right</Icon> 
-                    </button>
+            </div>  
+        )
+    }else{
+        return(
+            <footer>
+                <div className='footer'>
+                    <h6 className='texto-padrao'>Qual é este Pokémon?</h6>
                 </div>
-            </div>
-        </div>  
-    )
+            </footer>           
+        )
+    }
+    
     
 }
 

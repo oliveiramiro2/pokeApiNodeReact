@@ -29,7 +29,7 @@ function HeaderBlog({ changeSearch, text, changePokes, pag }){
             setControle(true)          
             Globais.filtroAtivo = controle
         }
-    }, [changePokes, text, controle, setControle]) 
+    }, [changePokes, text, controle, setControle, pag]) 
     return (
         <div className='header-blog'>
             <nav>

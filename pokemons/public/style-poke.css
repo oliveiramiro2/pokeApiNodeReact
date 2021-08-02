@@ -131,3 +131,27 @@ body {
 .material-icons {
     font-size: 45px;
 }
+
+.texto-padrao {
+    opacity: 1;
+    color: #fff;
+    font-size: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+footer{
+    display: flex;
+    position:fixed;
+    bottom: 0;
+    background-color: #777;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+.footer {
+    background-color: rgba(2, 2, 2, 0.219);
+    padding: auto 10px;
+}

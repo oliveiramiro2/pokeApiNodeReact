@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
 import Pagination from './components/Pagination'
-import Globais from './components/Globais'
 
 export default class App extends React.Component {  
   render(){
@@ -14,12 +13,7 @@ export default class App extends React.Component {
         <Provider store={store}>
           <HeaderPoke />
           <CardsPoke />
-          {Globais.filtroAtivo ? 
-            <>
-            </>
-          :
-            <Pagination />
-          }
+          <Pagination />
         </Provider>         
       </div>     
     )
