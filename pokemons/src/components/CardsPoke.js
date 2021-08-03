@@ -17,9 +17,10 @@ function CardsPoke({ pokemons }){
                     >   
                     {pokemons.pokemons.map((poke, id) =>
                         <div key={id}>
-                            <Card     
+                            <Card 
+                                key={id}    
                                 actions={[
-                                    <div>
+                                    <div key={id}>
                                         <p>
                                             <CgPokemon/> ----- Informações
                                         </p>

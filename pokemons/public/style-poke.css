@@ -14,16 +14,17 @@ body {
     width: 80%;
     height: 500px;
     margin-top: 2%;
-    opacity: 0.6;
     margin-left: 10%;
 }
 
-.container-home-img {
+.container-home-img, .container-sobre-img {
     background-image: url(pokedex.jpg);
     background-attachment: fixed;
-	background-size: contain;
+	background-size:cover;
     background-repeat: no-repeat;
 	background-position:bottom;
+    opacity: 0.6;
+    box-shadow: rgba(119, 119, 119, 0.61) 20px 20px 1px;
     width: 100%;
     height: 100%;
     display:flex;
@@ -32,7 +33,7 @@ body {
     text-align: start;
 }
 
-.container-home-img h3 {
+.container-home-img h2 {
     display: block;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(245, 6, 6);
@@ -45,19 +46,25 @@ body {
 .container-home-img hr {
     position: relative;
     top: -30%;
-    width: 100%;
 }
 
-.rodape-home-links {
+.rodape-home-poke, .rodape-home-sobre {
     display: flex;
     position: relative;
-    top: 39.8%;
-    width: 100%;
-    right: 60%;
+    top: 33%;
+    right: 20%;
+    border: #000 1px solid;
+    width: 370px;
+}
+
+.rodape-home-sobre {
+    right: 0;
+    left: 10%;
 }
 
 .container-home-img .texto-padrao {
     color: #000;
+    font-size: 40px;
     background-color: #fff;
     padding: 2%;
 }
@@ -67,8 +74,8 @@ body {
     display: grid;
     grid-template-columns: 50% auto;
     grid-template-areas: 
-        "header-poke header-poke"
-        "cards-poke cards-poke"
+        "header-poke"
+        "cards-poke"
     ;
 }
 
@@ -223,4 +230,51 @@ footer{
 .footer {
     background-color: rgba(2, 2, 2, 0.219);
     padding: auto 10px;
+}
+
+/* Sobre Nós */
+.container-sobre-img {
+    background-image: url(pergaminho.png);
+    background-size: contain;
+    opacity: 0.8;
+    box-shadow: none;
+}
+
+.sobre-voltar{
+    display: flex;
+    position: relative;
+    bottom: 20%;
+    right: 10%;
+}
+
+.sobre-voltar a{    
+    font-size: 60px;
+    transform: rotateY(180deg);
+    color: red;
+    background-color: #eee;
+    border: 2px solid #000;
+    height:15vmin;
+}
+
+.sobre-voltar p {
+    margin-left: 12%;
+    color: rgb(0, 0, 0);
+}
+
+.texto-sobre {
+    position: absolute;
+    width: 35%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.nome-sobre {
+    display: flex;
+    position: relative;
+    top: 37%;
+}
+
+.icone-nome {
+    font-size: 50px;
+    color: #777;
 }
