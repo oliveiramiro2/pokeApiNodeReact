@@ -1,14 +1,30 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 
-import CardsCompleto from './components/CardsCompleto'
+import PokedexHome from './components/PokedexHome'
+import HeaderPoke from './components/HeaderPoke'
+import CardsPoke from './components/CardsPoke'
+import Pagination from './components/Pagination'
 
 export default class App extends React.Component {  
   render(){
     return (  
-      <Switch>
-        <Route path='/pokemons' component={CardsCompleto}/>
-      </Switch>           
+      <div>
+        <main>
+          <Switch>                    
+            <Route path="/pokemons">
+              <div className='Grid'>           
+                <HeaderPoke />
+                <CardsPoke />
+                <Pagination />       
+              </div>
+            </Route>  
+            <Route path="/">
+              <PokedexHome />
+            </Route> 
+          </Switch>
+        </main>  
+      </div>           
     )
   }  
 }

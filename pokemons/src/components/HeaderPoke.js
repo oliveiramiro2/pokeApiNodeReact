@@ -5,13 +5,15 @@ import changePokes from '../store/action/consultaApi'
 import { changeSearch } from '../store/action/pesquisaA'
 import Globais from './Globais'
 
+const VALOR_PARADA = 'parar:D'
+
 function HeaderBlog({ changeSearch, text, changePokes, pag }){
     const [controle, setControle] = React.useState(false)
     const setSearch = e => {   
         if(e.target.value !== ""){ 
             changeSearch(e.target.value)
         }else{
-            changeSearch('parar:D')
+            changeSearch(VALOR_PARADA)
         }
         
     }
@@ -19,10 +21,10 @@ function HeaderBlog({ changeSearch, text, changePokes, pag }){
     React.useEffect(() => {
         if(controle){
             changePokes(Globais.urlTodosPokes, text.text) 
-        }else if(text.text === 'parar:D'){
+        }else if(text.text === VALOR_PARADA){
             changePokes(`${Globais.urlBase}?offset=${pag*20}&limit=20`)
         }
-        if(text === '' || text.text === 'parar:D'){                       
+        if(text === '' || text.text === VALOR_PARADA){                       
             setControle(false)
             Globais.filtroAtivo = controle
         }else{ 
