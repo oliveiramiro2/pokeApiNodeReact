@@ -1,21 +1,14 @@
 import React from 'react';
-import { store } from './store/store'
-import { Provider } from 'react-redux';
+import { Switch, Route } from 'react-router-dom'
 
-import HeaderPoke from './components/HeaderPoke'
-import CardsPoke from './components/CardsPoke'
-import Pagination from './components/Pagination'
+import CardsCompleto from './components/CardsCompleto'
 
 export default class App extends React.Component {  
   render(){
-    return (    
-      <div className='Grid'>
-        <Provider store={store}>
-          <HeaderPoke />
-          <CardsPoke />
-          <Pagination />
-        </Provider>         
-      </div>     
+    return (  
+      <Switch>
+        <Route path='/pokemons' component={CardsCompleto}/>
+      </Switch>           
     )
   }  
 }
