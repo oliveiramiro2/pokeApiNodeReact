@@ -1,5 +1,15 @@
  /* large */
  @media (max-width: 992px) and (max-width: 1199.98px) {
+    /*home*/ 
+    .container-home-img .texto-padrao {
+        font-size: 25px;
+    }    
+
+    .rodape-home-poke {
+        right: 20%;
+        width: 300px;
+    }
+
     /*sobre nos*/
     .texto-padrao {
         font-size: 18px;
@@ -22,6 +32,15 @@
 
 /*medium*/
 @media (max-width: 768px) and (max-width: 991.98px){
+    /*home*/ 
+    .container-home-img .texto-padrao {
+        font-size: 20px;
+    } 
+
+    .rodape-home-poke {
+        right: 30%;
+    }
+
     /*sobre nos*/
     .texto-padrao {
         font-size: 15px;
@@ -54,6 +73,20 @@
 
     /*small*/
     @media (max-width: 576px) and (max-width: 767.98px) {
+        /*home*/ 
+        .container-home-img .texto-padrao {
+            font-size: 15px;
+        }  
+
+        .rodape-home-poke {
+            right: 35%;
+        }
+
+        .rodape-home-sobre {
+            left: 0;
+            right: 20%;
+        }
+
         /*sobre nos*/
         .texto-padrao {
             font-size: 12px;

@@ -24,7 +24,7 @@ body {
     background-repeat: no-repeat;
 	background-position:bottom;
     opacity: 0.6;
-    box-shadow: rgba(119, 119, 119, 0.61) 20px 20px 1px;
+    box-shadow: rgb(119, 119, 119) 20px 20px 1px;
     width: 100%;
     height: 100%;
     display:flex;
@@ -39,13 +39,8 @@ body {
     color: rgb(245, 6, 6);
     background-color: #fff;
     position: relative;
-    top: -40%;
+    bottom: 40%;
     left: 40%;
-}
-
-.container-home-img hr {
-    position: relative;
-    top: -30%;
 }
 
 .rodape-home-poke, .rodape-home-sobre {
@@ -53,12 +48,10 @@ body {
     position: relative;
     top: 33%;
     right: 20%;
-    border: #000 1px solid;
-    width: 370px;
+    width: 385px;
 }
 
 .rodape-home-sobre {
-    right: 0;
     left: 10%;
 }
 
