@@ -9,7 +9,7 @@ function SobreNos(){
             <div className='container-sobre-img'>
                 <div className='sobre-voltar'>                    
                     <Link to='/'><IoExitSharp/></Link>
-                    <p className='texto-padrao'>Voltar</p>
+                    <p className='texto-padrao'><b>Voltar</b></p>
                 </div>               
                 <p className='texto-padrao texto-sobre'>
                     Espero que gostem do pokedex. Este projeto é apenas para treinar os conceitos de React.                    
