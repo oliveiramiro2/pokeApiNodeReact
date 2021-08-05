@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, Card, CardTitle } from 'react-materialize'
+import { Link } from 'react-router-dom'
+import { IoExitSharp } from 'react-icons/io5'
 
 import changePokes from './../store/action/consultaApi'
 import { CgPokemon } from 'react-icons/cg'
@@ -10,6 +12,10 @@ function CardsPoke({ pokemons }){
     if(pokemons.pokemons){
         return(
             <div className='cards-poke'>
+                <div className='voltar-home'>                    
+                    <Link to='/'><IoExitSharp className='voltar-icon'/></Link>
+                    <p className='texto-padrao'><b>Voltar Home</b></p>
+                </div>   
                 <Row>
                     <Col
                         m={6}

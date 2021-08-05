@@ -91,6 +91,20 @@ body {
     align-items: center;
 }
 
+.voltar-home {
+    display: flex;
+}
+
+.voltar-home .voltar-icon {
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.voltar-home .texto-padrao {
+    font-size: 25px;
+    margin-left: 2%;
+}
+
 .row .col.m6 {
     display: grid;
     grid-template-columns: 47% 47% 47% 47%;
@@ -241,7 +255,7 @@ footer{
     right: 10%;
 }
 
-.sobre-voltar a{    
+.voltar-icon {    
     font-size: 60px;
     transform: rotateY(180deg);
     color: red;

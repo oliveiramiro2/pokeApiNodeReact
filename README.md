@@ -21,14 +21,23 @@
      <hr />
      <div  align="center">
           <h2>Resultado no brownser</h2>
+          <h3><p>Home page</p></h3>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/home1.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/home2.png?raw=true" height="300"/>
+          <br /><br />
+          <h3><p>Pokedex</p></h3>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pokedex1.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pokedex2.png?raw=true" height="300"/>
+          <br /><br />
           <h3><p>Filtro por pesquisa</p></h3>
-          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pesquisa1.png?raw=true" height="300"/>
-          <br />
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/pesquisa2.png?raw=true" height="300"/>
-          <br />
+          <br /><br />
           <h3><p>Paginação por seta e número</p></h3>
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/paginacao1.png?raw=true" height="300"/>
-          <br />
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/paginacao2.png?raw=true" height="300"/>
+          <br /><br />
+          <h3><p>Sobre nós</p></h3>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/sobre1.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/sobre2.png?raw=true" height="300"/>
      </div>
 </div>

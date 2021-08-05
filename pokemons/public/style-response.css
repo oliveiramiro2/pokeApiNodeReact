@@ -11,6 +11,10 @@
     }
 
     /*cards*/
+    .voltar-home .texto-padrao {
+        font-size: 20px;
+    }
+
     .row .col.m6 {
         grid-template-columns: 65% 65% 65%;
     }
@@ -21,7 +25,7 @@
     }
 
     .card .card-content {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     /*sobre nos*/
@@ -48,11 +52,16 @@
 @media (max-width: 768px) and (max-width: 991.98px){
     /*home*/ 
     .container-home-img .texto-padrao {
-        font-size: 20px;
+        font-size: 15px;
     } 
 
     .rodape-home-poke {
         right: 30%;
+    }
+
+    /*cards*/
+    .voltar-home .texto-padrao {
+        font-size: 15px;
     }
 
     /*sobre nos*/
@@ -73,7 +82,7 @@
         right: 18%;
     }
     
-    .sobre-voltar a{    
+    .voltar-icon{    
         font-size: 40px;
     }
     
@@ -102,6 +111,10 @@
         }
 
         /*cards*/
+        .voltar-home .texto-padrao {
+            font-size: 14px;
+        }
+
         .row .col.m6 {
             grid-template-columns: 50% 50%;
         }
@@ -124,13 +137,18 @@
             right: 15%;
         }
 
-        .sobre-voltar a{    
+        .voltar-icon {    
             font-size: 40px;
         }
     }
 
     /*extra small*/
     @media (max-width: 575.98px){
+        /*cards*/
+        .voltar-home .texto-padrao {
+            font-size: 10px;
+        }
+
         /*sobre nos*/
         .texto-sobre {
             margin-top: 65%;
@@ -150,7 +168,7 @@
             font-size: 15px;
         }
 
-        .sobre-voltar a{    
+        .voltar-icon {    
             font-size: 30px;
         }
 

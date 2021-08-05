@@ -8,7 +8,7 @@ function SobreNos(){
         <div className='container-home'>          
             <div className='container-sobre-img'>
                 <div className='sobre-voltar'>                    
-                    <Link to='/'><IoExitSharp/></Link>
+                    <Link to='/'><IoExitSharp className='voltar-icon' /></Link>
                     <p className='texto-padrao'><b>Voltar</b></p>
                 </div>               
                 <p className='texto-padrao texto-sobre'>
