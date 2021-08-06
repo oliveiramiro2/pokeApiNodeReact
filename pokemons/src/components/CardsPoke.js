@@ -4,11 +4,15 @@ import { Row, Col, Card, CardTitle } from 'react-materialize'
 import { Link } from 'react-router-dom'
 import { IoExitSharp } from 'react-icons/io5'
 
-import changePokes from './../store/action/consultaApi'
+import { changeNumInfo } from './../store/action/informacoesA'
 import { CgPokemon } from 'react-icons/cg'
 import { SiPokemon } from 'react-icons/si'
 
-function CardsPoke({ pokemons }){
+function CardsPoke({ pokemons, changeNumInfo }){
+    const showInfo = (id) => {
+        changeNumInfo(id)  
+    }
+
     if(pokemons.pokemons){
         return(
             <div className='cards-poke'>
@@ -28,7 +32,7 @@ function CardsPoke({ pokemons }){
                                 actions={[
                                     <div key={id}>
                                         <p>
-                                            <CgPokemon/> ----- Informações
+                                            <Link to="/informacoes_poke" onClick={()=>showInfo(poke.url.slice(34, -1))}><CgPokemon/> ----- Informações</Link>
                                         </p>
                                     </div>
                                 ]}
@@ -67,4 +71,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { changePokes })(CardsPoke)
+export default connect(mapStateToProps, { changeNumInfo })(CardsPoke)

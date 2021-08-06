@@ -6,6 +6,7 @@ import HeaderPoke from './components/HeaderPoke'
 import CardsPoke from './components/CardsPoke'
 import Pagination from './components/Pagination'
 import SobreNos from './components/SobreNos'
+import InfoPoke from './components/InfoPoke'
 
 export default class App extends React.Component {  
   render(){
@@ -20,6 +21,7 @@ export default class App extends React.Component {
                 <Pagination />       
               </div>
             </Route>
+            <Route path="/informacoes_poke" component={InfoPoke}></Route>
             <Route path="/Sobre_Nos" component={SobreNos} />
             <Route path="/" component={PokedexHome} />
           </Switch>
