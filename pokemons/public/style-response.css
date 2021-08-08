@@ -28,6 +28,12 @@
         font-size: 20px;
     }
 
+    /*info*/
+    .container-fotos img {
+        width: 80px;
+        height: 125px;
+    }
+
     /*sobre nos*/
     .texto-padrao {
         font-size: 18px;
@@ -62,6 +68,12 @@
     /*cards*/
     .voltar-home .texto-padrao {
         font-size: 15px;
+    }
+
+    /*info*/
+    .container-fotos img {
+        width: 70px;
+        height: 90px;
     }
 
     /*sobre nos*/
@@ -123,6 +135,12 @@
             font-size: 15px;
         }
 
+        /*info*/
+        .container-fotos img {
+            width: 50px;
+            height: 70px;
+        }
+
         /*sobre nos*/
         .texto-padrao {
             font-size: 12px;
@@ -147,6 +165,12 @@
         /*cards*/
         .voltar-home .texto-padrao {
             font-size: 10px;
+        }
+
+        /*info*/
+        .container-fotos img {
+            width: 50px;
+            height: 70px;
         }
 
         /*sobre nos*/
