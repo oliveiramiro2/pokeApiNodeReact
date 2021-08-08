@@ -105,99 +105,107 @@
     .icone-nome {
         font-size: 30px;
     }
+}
 
-    /*small*/
-    @media (max-width: 576px) and (max-width: 767.99px) {
-        /*home*/ 
-        .container-home-img .texto-padrao {
-            font-size: 15px;
-        }  
+/*small*/
+@media (max-width: 576px) and (max-width: 767.99px) {
+    /*home*/ 
+    .container-home-img .texto-padrao {
+        font-size: 15px;
+    }  
 
-        .rodape-home-poke {
-            right: 35%;
-        }
-
-        .rodape-home-sobre {
-            left: 0;
-            right: 20%;
-        }
-
-        /*cards*/
-        .voltar-home .texto-padrao {
-            font-size: 14px;
-        }
-
-        .row .col.m6 {
-            grid-template-columns: 50% 50%;
-        }
-
-        .card .card-content {
-            font-size: 15px;
-        }
-
-        /*info*/
-        .container-fotos img {
-            width: 50px;
-            height: 70px;
-        }
-
-        /*sobre nos*/
-        .texto-padrao {
-            font-size: 12px;
-        }
-
-        .texto-sobre {
-            margin-top: 45%;
-        }
-
-        .sobre-voltar{
-            top: 12%;
-            right: 15%;
-        }
-
-        .voltar-icon {    
-            font-size: 40px;
-        }
+    .rodape-home-poke {
+        right: 35%;
     }
 
-    /*extra small*/
-    @media (max-width: 575.98px){
-        /*cards*/
-        .voltar-home .texto-padrao {
-            font-size: 10px;
-        }
+    .rodape-home-sobre {
+        left: 0;
+        right: 20%;
+    }
 
-        /*info*/
-        .container-fotos img {
-            width: 50px;
-            height: 70px;
-        }
+    /*cards*/
+    .voltar-home .texto-padrao {
+        font-size: 14px;
+    }
 
-        /*sobre nos*/
-        .texto-sobre {
-            margin-top: 65%;
-            margin-left: 5%;
-        } 
+    .row .col.m6 {
+        grid-template-columns: 50% 50%;
+    }
 
-        .icone-nome {
-            font-size: 20px;
-        }
+    .card .card-content {
+        font-size: 15px;
+    }
 
-        .sobre-voltar{
-            top: 18%;
-            right: 15%;
-        }
+    /*info*/
+    .container-fotos img {
+        width: 50px;
+        height: 70px;
+    }
 
-        .sobre-voltar p {
-            font-size: 15px;
-        }
+    .informacao-poke .texto-padrao {
+        font-size: 13px;
+    }
 
-        .voltar-icon {    
-            font-size: 30px;
-        }
+    /*sobre nos*/
+    .texto-padrao {
+        font-size: 12px;
+    }
 
-        .nome-sobre {
-            left: 15%;
-        }
+    .texto-sobre {
+        margin-top: 45%;
+    }
+
+    .sobre-voltar{
+        top: 12%;
+        right: 15%;
+    }
+
+    .voltar-icon {    
+        font-size: 40px;
+    }
+}
+
+/*extra small*/
+@media (max-width: 575.98px){
+    /*cards*/
+    .voltar-home .texto-padrao {
+        font-size: 10px;
+    }
+
+    /*info*/
+    .container-fotos img {
+        width: 50px;
+        height: 70px;
+    }
+
+    .informacao-poke .texto-padrao {
+        font-size: 8px;
+    }
+
+    /*sobre nos*/
+    .texto-sobre {
+        margin-top: 65%;
+        margin-left: 5%;
+    } 
+
+    .icone-nome {
+        font-size: 20px;
+    }
+
+    .sobre-voltar{
+        top: 18%;
+        right: 15%;
+    }
+
+    .sobre-voltar p {
+        font-size: 15px;
+    }
+
+    .voltar-icon {    
+        font-size: 30px;
+    }
+
+    .nome-sobre {
+        left: 15%;
     }
 }

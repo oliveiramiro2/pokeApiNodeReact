@@ -242,7 +242,12 @@ footer{
 /*pokedex*/
 .pokedex-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.pokedex-container .voltar-home .texto-padrao {
+    color: #000;
+    margin-left: 15px;
 }
 
 .pokedex-fundo {
@@ -267,6 +272,28 @@ footer{
 .container-fotos div .texto-padrao {
     color: #f00;
 }
+
+.informacao-container {
+    background-color: #fff;
+    width: 20%;
+    height: 10%;
+    opacity: 0.8;
+    margin: 15px 4px;
+    padding: 3px;
+}
+
+.informacao-poke {
+    background-color: #000;
+    opacity: 0.6;  
+}
+
+.informacao-poke div {
+    display: flex;
+}
+
+.informacao-poke p {
+    margin: 0;
+} 
 
 /* Sobre Nós */
 .container-sobre-img {

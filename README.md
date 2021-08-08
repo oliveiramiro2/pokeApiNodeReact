@@ -36,6 +36,10 @@
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/paginacao1.png?raw=true" height="300"/>
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/paginacao2.png?raw=true" height="300"/>
           <br /><br />
+          <h3><p>Informações sobre o pokemons</p></h3>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/info1.png?raw=true" height="300"/>
+          <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/info2.png?raw=true" height="300"/>
+          <br /><br />
           <h3><p>Sobre nós</p></h3>
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/sobre1.png?raw=true" height="300"/>
           <img  src="https://github.com/oliveiramiro2/pokeApiNodeReact/blob/main/imgs_readme/sobre2.png?raw=true" height="300"/>
